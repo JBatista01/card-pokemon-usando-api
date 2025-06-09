@@ -1,26 +1,30 @@
-div {
-  width: 300px;
-  height: 300px;
-  background-color: orange;
-  margin: 2px;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align:center;
-  
-}
-img{
-     filter: grayscale(1.00);
-    transition: transform 0.5s ease, filter 0.3s ease;
-  
-}
-
-img:hover{
-      transform: scale(1.7);
-      filter: brightness(1.00);
-}
-body{
-  background-image: url("https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24533590/Screen_Shot_2023_03_24_at_9.25.38_AM.png?quality=90&strip=all&crop=11.733449477352,0,83.15331010453,100");
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://sm.ign.com/ign_br/screenshot/default/world-map_s4nd.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.App div {
+  height: 400px;
+  width: 300px;
+  background: linear-gradient(180deg, #e1cd11 0%, #2dff7a 41.4%, #d0e68b 41.4%, #c6e97a 58.85%, #59ef07 100%);
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+img {
+  background-size: auto;
 }

@@ -23,16 +23,17 @@ function App() {
         post.map((e) => {
 
           const pokeNumber = e.url.split('pokemon')[1].replaceAll('/','')
+           const pokeName = e.name
           console.log(pokeNumber)
           const urlFoto = 'https://raw.githubusercontent.com/wellrccity/pokedex-html-js/refs/heads/master/assets/img/pokemons/poke_'+pokeNumber+'.gif'
           
           return (
             <div >
               <h4>
-                {pokeNumber}
+                {pokeNumber}-<b>{pokeName}</b>
               </h4>
               <img src={urlFoto}></img>
-              <musica></musica>
+              
             </div>
           )
         })
