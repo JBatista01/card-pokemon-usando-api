@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 
 function App() {
+   let BackgroundAudio = new Audio("zelda_song.mp3");
+  BackgroundAudio.loop = true;
+  BackgroundAudio.muted = true;
   
   const [post, setPost] = useState([])
   const qtdPoke = 706
@@ -28,7 +31,23 @@ function App() {
           const urlFoto = 'https://raw.githubusercontent.com/wellrccity/pokedex-html-js/refs/heads/master/assets/img/pokemons/poke_'+pokeNumber+'.gif'
           
           return (
-            <div >
+            <div onClick={() => {
+            
+              const isMutted = BackgroundAudio.muted
+              console.log(isMutted)
+
+              if (isMutted) {
+                BackgroundAudio = new Audio("./Pokémon.mp3");
+                BackgroundAudio.muted = false;
+                BackgroundAudio.play().catch((e) => {
+                  console.log("Falha ao reproduzir o áudio:", e);
+                });
+              }else{
+                BackgroundAudio.muted = true;
+              }
+
+
+            }}>
               <h4>
                 {pokeNumber}-<b>{pokeName}</b>
               </h4>
